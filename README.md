@@ -39,11 +39,93 @@ Cheat sheet for using Laravel Dusk
 
         $browser->visit('https://www.google.com')
         
+### Element Operation
+
+* Click Element
+
+        $browser->click('Element Selector');
+
+* Clicking Link
+
+        $browser->clickLink('Link Test Here');
+
+* Pressing Button
+
+        $browser->press('Button Test Here');
+
 ### Locating Elements
 
-### Filling Form Input
+* Multiple Elements
 
-### Clicking Link and Buttons
+        $browser->elements($selector)
+
+* Single Elements
+
+        $browser->element($selector)
+
+### Form Input
+
+* Input Box
+
+        $browser->value($selector)
+        //or
+        $browser->type($selector)
+
+        $browser->append($field, $value)
+
+* Select Box
+
+        $browser->select($field) //Random value
+
+        $browser->select($field, $value)
+
+* Radio Button
+
+        $browser->radio($field, $value)
+
+* Checkbox
+
+        $browser->check($field, $optionalValue)
+
+        $browser->uncheck($field, $optionalValue)
+
+* Attach File
+
+        $browser->attach($field, $path)
+
+* TextArea
+
+        $browser->keys($field, $value)
+
+* CLear Field
+
+        $browser->clear($field)
+
+### Authentication
+
+* Login
+
+        $browser->loginAs('user@email.com');
+        //Or
+        $browser->loginAs($userObject);
+        //Or User-id
+        $browser->loginAs(3);
+* Logout
+
+        $browser->logout();
+
+* Assert user authenticated 
+
+        $browser->assertAuthenticated($guardOptional);
+
+* Assert authenticated as user
+
+        $browser->assertAuthenticatedAs($user, $guardOptional);
+
+* Assert guest user
+
+        $browser->assertGuest();
+
 
 ### Running in Headless Mode
 
@@ -56,3 +138,21 @@ Cheat sheet for using Laravel Dusk
 ### Using Dusk Components
 
 ### Using Dusk Components
+
+### Execute Javascript
+
+        $browser->script('javascript')
+
+### Handle Javascript Dialog
+
+* Accept Dialog
+
+        $browser->acceptDialog();
+
+* Dismiss Dialog
+
+        $browser->dismissDialog();
+
+* Type-in Dialog
+
+        $browser->typeInDialog($value);
