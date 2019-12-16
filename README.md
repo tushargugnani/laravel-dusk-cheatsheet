@@ -129,15 +129,85 @@ Cheat sheet for using Laravel Dusk
 
 ### Running in Headless Mode
 
-### Taking Screenshots
+### Browser Options
 
+* Refresh the Page
+
+        $browser->refresh();
+
+* Navigate to the previous page.
+
+        $browser->back();
+
+* Maximize the browser window
+
+        $browser->maximize();
+
+* Resize the browser window
+
+        $brwoser->resize($width, $height);
+
+* Make the browser window as large as the content.
+
+        $browser->fitContent()
+
+* Move the browser window
+
+        $browser->move($x, $y)
+
+* Scroll screen to element at the given selector.
+
+        $browser->scrollTo($selector)
+
+* Take a screenshot and store it with the given name.
+
+        $browser->screenshot($name)
+
+* Store the console output with the given name.
+
+        $browser->storeConsoleLog($name)
+
+* Close the browser
+
+        $browser->quit();
+
+* Dump Page Source
+
+        $browser->dump();
+
+* Pause execution of test and open Laravel Tinker
+
+        $browser->tinker();
+
+* Stop Running the test but leave the browser open
+
+        $browser->stop();
+        
 ### Waiting 
 
 ### Using Dusk Pages
 
-### Using Dusk Components
+* Generating a new page
+
+        php artisan dusk:page PageName
+
+* Visiting page
+
+        $browser->visit(new PageName)
+
+        $browser->visit(new PageName($arg))
+
+* Page Methods
+
+        $browser->visit(new PageName)
+                ->pageMethod()
+
+        //Already on page
+        $browser->on(new PageName)
+                ->pageMethod()
 
 ### Using Dusk Components
+
 
 ### Execute Javascript
 
