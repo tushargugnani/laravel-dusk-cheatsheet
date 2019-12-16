@@ -127,8 +127,6 @@ Cheat sheet for using Laravel Dusk
         $browser->assertGuest();
 
 
-### Running in Headless Mode
-
 ### Browser Options
 
 * Refresh the Page
@@ -182,8 +180,37 @@ Cheat sheet for using Laravel Dusk
 * Stop Running the test but leave the browser open
 
         $browser->stop();
-        
+
 ### Waiting 
+
+* Pause for the given amount of milliseconds.
+
+        $browser->pause($milliseconds)
+
+* Wait for the given selector to be visible.
+
+        $browser->waitFor($selector, $secondsOptional)
+
+* Wait for the given selector to be removed.
+
+        $browser->waitUntilMissing($selector, $secondsOptional)
+
+* Wait for the given text to be visible.
+
+        $browser->waitForText($text, $secondsOptional)
+
+* Wait for the given link to be visible.
+
+        $browser->waitForLink($link, $secondsOptional)
+
+* Wait for the given location.
+
+        $browser->waitForLocation($path, $secondsOptional)
+
+* Wait for the current page to reload.
+
+        $browser->waitForReload();
+
 
 ### Using Dusk Pages
 
