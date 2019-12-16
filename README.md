@@ -235,6 +235,18 @@ Cheat sheet for using Laravel Dusk
 
 ### Using Dusk Components
 
+* Generating Component
+
+        php artisan dusk:component ComponentName
+
+* Using Components
+
+         $browser->within(new ComponentName, function ($browser) {
+                        $browser->componentMethod();
+                    })
+        
+
+
 
 ### Execute Javascript
 
@@ -253,3 +265,10 @@ Cheat sheet for using Laravel Dusk
 * Type-in Dialog
 
         $browser->typeInDialog($value);
+
+
+### Dusk Resources & Packages
+
+[Laravel Dusk Documentation](https://laravel.com/docs/master/dusk)
+
+[Laravel Dusk Dashboard Package](https://github.com/beyondcode/dusk-dashboard)
