@@ -181,6 +181,10 @@ Cheat sheet for using Laravel Dusk
 
         $browser->stop();
 
+* Get Current URL of the page
+
+        $browser->driver->getCurrentURL();
+
 ### Waiting 
 
 * Pause for the given amount of milliseconds.
